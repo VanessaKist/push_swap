@@ -17,12 +17,12 @@ IFLAGS = -I $(PATH_INCL)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT)
-	@$(CC) $(CFLAGS) $(IFLAGS) -o $(NAME) $(OBJS) $(LFLAGS)
+$(NAME): $(LIBFT) $(OBJS) 
+	@$(CC) $(CFLAGS) $(IFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 
 $(PATH_OBJS)%.o: $(PATH_SRCS)%.c
 	@mkdir -p $(PATH_OBJS)
-	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(IFLAGS) -I ./libraries/42_libft/libft.h -c $< -o $@
 
 $(LIBFT):
 	make -C $(PATH_LIBFT)
