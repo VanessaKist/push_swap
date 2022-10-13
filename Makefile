@@ -5,14 +5,15 @@ PATH_OBJS = ./objects/
 PATH_INCL = ./includes/
 PATH_LIBFT = ./libraries/42_libft/
 
-SRCS = $(addprefix $(PATH_SRCS), push_swap.c)
+SRCS = $(addprefix $(PATH_SRCS), push_swap.c\
+		ft_get_index.c)
 
 OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 
 LIBFT = $(PATH_LIBFT)libft.a
 
 CC = cc
-//CFLAGS = -Wall -Wextra -Werror
+//CFLAGS = -Wall -Wextra -Werror -ggdb
 IFLAGS = -I $(PATH_INCL)
 
 all: $(NAME)

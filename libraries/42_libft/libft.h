@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:46:04 by coder             #+#    #+#             */
-/*   Updated: 2022/10/05 21:16:10 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/10/13 20:51:08 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,17 @@ typedef struct s_list
 	void	*content;
 	struct	s_list *next;
 }	t_list;
+
+typedef struct s_element
+{
+	int					content;
+	int					index;
+	int					stack_pos;
+	int					target_pos;
+	int					top_a;
+	int					top_b;
+	struct s_element	*next;
+}	t_element;
 
 int		ft_atoi(const char *c);
 void	ft_bzero(void *s, size_t len);
@@ -61,6 +72,9 @@ int		ft_splitlen(char **split);
 void	ft_matrixfree(void **matrix);
 void	ft_pointerfree(void *pointer);
 int		ft_htoi(char s[]);
-t_list *ft_lstnew(void *content);
+t_element	*ft_lstnew(int content, int stack_pos);
+t_element	*ft_lstlast(t_element *element);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_element **stack, t_element *new);
 
 #endif
