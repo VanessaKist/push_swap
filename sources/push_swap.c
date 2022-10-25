@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:26:22 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/10/18 01:08:49 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/10/26 01:32:27 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ void	do_sa(t_element **list)
 	aux = (*list)->next;
 	(*list)->next = (*list)->next->next;
 	aux->next = (*list);
-	aux = (*list);
+	aux = (*list)
 }
 
 //pb (push B): Take the first element at the top of A and put it at the top of B. Do nothing if A is empty.
- void do_pb(t_element **a, t_element **b)
+ /* void do_pb(t_element **a, t_element **b)
 {
 	if (!*a)
 		return ;
 	*b = *a;
 	*a = (*a)->next;
-} 
+}  */
 
 /* void do_ra(t_element **stack)
 {
@@ -58,7 +58,6 @@ int main (int argc, char **argv)
 			ft_lstnew(ft_atoi(*++argv), stack_pos++));
 	}
 	a->top_a = ft_atoi(argv[0]);
-	printf("top_a:%d\nstackpos:%d\n", a->top_a, stack_pos);
 	ft_get_index(a);
 	//do_sa(&a);
 	//do_pb(&a, &b);
