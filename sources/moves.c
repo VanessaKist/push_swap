@@ -3,39 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 19:13:27 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/10/15 20:10:45 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/10/26 01:29:14 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-"../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-/* static void do_sa(t_element *a)
+void	do_swap(t_element **list)
 {
-	t_element *a;
-	int aux;
+	t_element *aux;
 
-	aux = a->content;
-	a->content = a->next;
-	a->next = aux;
-	
+	aux = (*list)->next;
+	(*list)->next = (*list)->next->next;
+	aux->next = *list;
+	*list = aux;
 }
- */
-/* typedef struct s_list
-{
-	void	*content;
-	struct	s_list *next;
-}	t_list;
 
-typedef struct s_element
+//pb (push B): Take the first element at the top of A and put it at the top of B. Do nothing if A is empty.
+void	do_pushB(t_element **a, t_element **b)
 {
-	int					content;
-	int					index;
-	int					stack_pos;
-	int					target_pos;
-	int					top_a;
-	int					top_b;
-	struct s_element	*next;
-}	t_element; */
+	if (!*a)
+		return ;
+	*b = *a;
+	*a = (*a)->next;
+}
+
+//void do_ra(t_element **list)

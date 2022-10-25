@@ -6,7 +6,8 @@ PATH_INCL = ./includes/
 PATH_LIBFT = ./libraries/42_libft/
 
 SRCS = $(addprefix $(PATH_SRCS), push_swap.c\
-		ft_get_index.c)
+		ft_get_index.c \
+		moves.c)
 
 OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 
