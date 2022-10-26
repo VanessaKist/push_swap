@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 19:13:27 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/10/26 01:29:14 by coder            ###   ########.fr       */
+/*   Updated: 2022/10/26 03:38:42 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ void	do_pushB(t_element **a, t_element **b)
 	*a = (*a)->next;
 }
 
-//void do_ra(t_element **list)
