@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:26:22 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/10/26 04:17:42 by coder            ###   ########.fr       */
+/*   Updated: 2022/10/26 04:22:32 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void do_ra(t_element **list)
 	aux = *list; //auxiliar recebe o primeiro elemento da lista;
 	last->next = aux; //o últimmo elemento aponta para o primeiro;
 	*list = aux->next; //o primeiro elemento da lista agora vai apontar para o segundo elemento;
-	aux->next = NULL; //um aponta para nulo;
+	aux->next = NULL; //o que antes era o primeiro da lista, agora aponta para nulo;
 }
 
 int main (int argc, char **argv)
