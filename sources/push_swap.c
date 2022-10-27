@@ -6,23 +6,11 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:26:22 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/10/26 04:22:32 by coder            ###   ########.fr       */
+/*   Updated: 2022/10/27 03:13:51 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void do_ra(t_element **list)
-{
-	t_element *aux;
-	t_element *last;
-	
-	last = ft_lstlast(*list);
-	aux = *list; //auxiliar recebe o primeiro elemento da lista;
-	last->next = aux; //o últimmo elemento aponta para o primeiro;
-	*list = aux->next; //o primeiro elemento da lista agora vai apontar para o segundo elemento;
-	aux->next = NULL; //o que antes era o primeiro da lista, agora aponta para nulo;
-}
 
 int main (int argc, char **argv)
 {
@@ -52,10 +40,10 @@ int main (int argc, char **argv)
 		printf("%d:%d - index:%d\n", b->stack_pos, b->content, b->index);
 		b = b->next;
 	}
-	do_ra(&a);
+	do_reverse_rotate(&a);
 	aux = a;
 	// Imprimindo pra verificar
-	puts("\n\n\t\tLISTA DEPOIS DO ROTATE");
+	puts("\n\n\t\tLISTA DEPOIS DO REVERSE");
 	while (aux)
 	{
 		printf("Elemento: %d\n", aux->content);
