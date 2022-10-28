@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 01:26:11 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/10/28 01:41:20 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/10/28 03:41:00 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,4 @@ void	do_pushB(t_element **a, t_element **b)
 {
 	if (!*a)
 		return ;
-	*b = *a;
-	*a = (*a)->next;
 }

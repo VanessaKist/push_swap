@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 22:57:30 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/10/28 03:14:30 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/10/28 03:41:40 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main (int argc, char **argv)
 	t_element *stack_a;
 	t_element *aux;
 	t_element *stack_b;
+	t_element *aux2;
 	
 	int			stack_pos;
 	
@@ -31,13 +32,13 @@ int main (int argc, char **argv)
 			ft_lstnew(ft_atoi(*++argv), stack_pos++));
 	}
 	ft_get_index(stack_a);
-	stack_b = stack_a;
-	while (stack_b)
+	aux2 = stack_a;
+	while (aux2)
 	{
-		printf("%d:%d - index:%d\n", stack_b->stack_pos, stack_b->content, stack_b->index);
-		stack_b = stack_b->next;
+		printf("%d:%d - index:%d\n", aux2->stack_pos, aux2->content, aux2->index);
+		aux2 = aux2->next;
 	}
-	do_reverse_rotate(&stack_a);
+	//do_push(&stack_a, &stack_b);
 	aux = stack_a;
 	// Imprimindo pra verificar
 	puts("\n\n\t\tLISTA DEPOIS DO REVERSE");
