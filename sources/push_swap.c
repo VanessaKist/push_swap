@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 18:26:22 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/10/27 03:13:51 by coder            ###   ########.fr       */
+/*   Created: 2022/10/27 22:57:30 by vkist-si          #+#    #+#             */
+/*   Updated: 2022/10/28 03:14:30 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int main (int argc, char **argv)
 {
-	t_element *a;
+	t_element *stack_a;
 	t_element *aux;
-	t_element *b;
+	t_element *stack_b;
 	
 	int			stack_pos;
 	
@@ -24,24 +24,21 @@ int main (int argc, char **argv)
 	if (argc < 3)
 		exit(1);
 	--argc;
-	a = ft_lstnew(ft_atoi(*++argv), stack_pos++);
+	stack_a = ft_lstnew(ft_atoi(*++argv), stack_pos++);
 	while (--argc)
 	{
-		ft_lstadd_back(&a, 
+		ft_lstadd_back(&stack_a, 
 			ft_lstnew(ft_atoi(*++argv), stack_pos++));
 	}
-	a->top_a = ft_atoi(argv[0]);
-	ft_get_index(a);
-	//do_pushB(&a, &b);
-	//do_swap(&a);
-	b = a;
-	while (b)
+	ft_get_index(stack_a);
+	stack_b = stack_a;
+	while (stack_b)
 	{
-		printf("%d:%d - index:%d\n", b->stack_pos, b->content, b->index);
-		b = b->next;
+		printf("%d:%d - index:%d\n", stack_b->stack_pos, stack_b->content, stack_b->index);
+		stack_b = stack_b->next;
 	}
-	do_reverse_rotate(&a);
-	aux = a;
+	do_reverse_rotate(&stack_a);
+	aux = stack_a;
 	// Imprimindo pra verificar
 	puts("\n\n\t\tLISTA DEPOIS DO REVERSE");
 	while (aux)

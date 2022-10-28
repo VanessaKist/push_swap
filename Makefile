@@ -5,9 +5,13 @@ PATH_OBJS = ./objects/
 PATH_INCL = ./includes/
 PATH_LIBFT = ./libraries/42_libft/
 
-SRCS = $(addprefix $(PATH_SRCS), push_swap.c\
-		ft_get_index.c \
-		moves.c)
+SRCS = $(addprefix $(PATH_SRCS), push_swap.c \
+		ft_get_index.c) \
+		$(addprefix $(PATH_SRCS)moves/,\
+		push.c\
+		rotate.c\
+		rrotate.c\
+		swap.c)
 
 OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 
@@ -24,6 +28,7 @@ $(NAME): $(LIBFT) $(OBJS)
 
 $(PATH_OBJS)%.o: $(PATH_SRCS)%.c
 	@mkdir -p $(PATH_OBJS)
+	@mkdir -p $(PATH_OBJS)moves/
 	$(CC) $(CFLAGS) $(IFLAGS) -I ./libraries/42_libft/libft.h -c $< -o $@
 
 $(LIBFT):
