@@ -6,7 +6,8 @@ PATH_INCL = ./includes/
 PATH_LIBFT = ./libraries/42_libft/
 
 SRCS = $(addprefix $(PATH_SRCS), push_swap.c \
-		ft_get_index.c) \
+		ft_get_index.c \
+		choose_sorting.c) \
 		$(addprefix $(PATH_SRCS)moves/,\
 		push.c\
 		rotate.c\
