@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 22:57:30 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/10/29 02:27:55 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/04 02:22:35 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int main (int argc, char **argv)
 	
 	int			stack_pos;
 	
+	stack_b = NULL;
 	stack_pos = 0;
 	if (argc < 3)
 		exit(1);
@@ -44,18 +45,18 @@ int main (int argc, char **argv)
 			ft_lstnew(ft_atoi(*++argv), stack_pos++));
 	}
 	ft_get_index(stack_a);
+	if(!is_sorted(stack_a))
+		choose_sorting(stack_pos, &stack_a, &stack_b);
 	aux2 = stack_a;
 	while (aux2)
 	{
 		printf("%d:%d - index:%d\n", aux2->stack_pos, aux2->content, aux2->index);
+		//printf("%d:", aux2->content);
 		aux2 = aux2->next;
 	}
-	//do_push(&stack_a, &stack_b);
-	if(!is_sorted(stack_a))
-		choose_sorting(stack_pos, &stack_a, &stack_b);
-	aux = stack_a;
+	aux = stack_b;
 	// Imprimindo pra verificar
-	puts("\n\n\t\tLISTA DEPOIS DO SWAP");
+	puts("\n\n\t\tLISTA DEPOIS DO PUSHE");
 	while (aux)
 	{
 		printf("Elemento: %d\n", aux->content);

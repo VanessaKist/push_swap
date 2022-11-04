@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   choose_sorting.c                                   :+:      :+:    :+:   */
+/*   find_position.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 00:58:49 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/04 01:14:51 by vkist-si         ###   ########.fr       */
+/*   Created: 2022/11/01 19:43:43 by vkist-si          #+#    #+#             */
+/*   Updated: 2022/11/01 20:59:40 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include "unistd.h"
 
-void choose_sorting(int stack_pos, t_element **stack_a, t_element **stack_b)
-{	
-	if (stack_pos == 2)
-		do_swap(stack_a);
-	else if (stack_pos == 3)
-		sort_for_three(stack_a);
-	else if (stack_pos >= 4 && stack_pos <= 6)
-		sort_one_to_five(stack_a, stack_b);
-	/* else
-		radix_sort(stack_a, stack_b, argc); */
+void	find_position(t_element **stack)
+{
+	t_element *aux;
+	int		pos;
+	
+	pos = 0;
+	aux = *stack;
+	while (aux)
+	{
+		aux->pos = pos++;
+		aux = aux->next;
+	}
 }
