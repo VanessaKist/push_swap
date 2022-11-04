@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 22:57:30 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/04 23:55:50 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/05 00:44:57 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int main (int argc, char **argv)
 	}
 	aux = stack_b;
 	// Imprimindo pra verificar
-	puts("\n\n\t\tLISTA DEPOIS DO PUSHE");
+	puts("\n\n\t\tMINHA STACK B");
 	while (aux)
 	{
 		printf("Elemento: %d\n", aux->content);

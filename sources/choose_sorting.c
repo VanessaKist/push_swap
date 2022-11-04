@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 00:58:49 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/05 00:23:35 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/05 00:42:51 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void choose_sorting(int stack_pos, t_element **stack_a, t_element **stack_b)
 	else if (stack_pos == 3)
 		sort_for_three(stack_a);
 	else if (stack_pos >= 4 && stack_pos <= 6)
-		sort_one_to_five(stack_a, stack_b);
+		sort_one_to_five(stack_a, stack_b, stack_pos);
 	/* else
 		radix_sort(stack_a, stack_b, argc); */
 }
