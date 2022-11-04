@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:46:04 by coder             #+#    #+#             */
-/*   Updated: 2022/11/01 19:59:29 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/05 00:06:46 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ typedef struct s_element
 	int					index;
 	int					stack_pos;
 	int					pos;
-	int					target_pos;
 	struct s_element	*next;
 }	t_element;
 

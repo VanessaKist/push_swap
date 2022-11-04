@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:16:08 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/04 22:34:06 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/05 00:36:04 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,11 @@ void	sort_one_to_five(t_element **stack_a, t_element **stack_b)
 		else
 			aux = aux->next;
 	}
-	
+//	aux2 = *stack_b;
+	if((*stack_a)->next->next->next == NULL)
+	{
+		sort_for_three(stack_a);
+		do_push(stack_a, stack_b, 'b');
+		do_push(stack_a, stack_b, 'b');
+	}	
 }
