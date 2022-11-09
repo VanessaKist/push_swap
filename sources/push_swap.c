@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 22:57:30 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/05 00:44:57 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/09 02:04:35 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,19 @@ static bool is_sorted(t_element *stack_a)
 			return (false);
 	}
 	return (true);
+}
+
+static int	get_the_digit(int max_index)
+{
+	int	digits;
+
+	digits = 0;
+	while (max_index)
+	{
+		max_index /= 2;
+		digits++;
+	}
+	return (digits);
 }
 
 int main (int argc, char **argv)
@@ -45,22 +58,30 @@ int main (int argc, char **argv)
 			ft_lstnew(ft_atoi(*++argv), stack_pos++));
 	}
 	ft_get_index(stack_a);
+	//printf("stack_pos: %d\n", stack_pos);
+	//printf("stack_a->stack_pos: %d\n", stack_a->stack_pos);
+	//free_stack(&stack_a);
 	if(!is_sorted(stack_a))
-		choose_sorting(stack_pos, &stack_a, &stack_b);
+		choose_sorting(&stack_a, &stack_b);
+	aux = stack_a;
+	while (aux)
+	{
+		if (aux->index == (stack_pos - 1))
+			get_the_digit(aux->index);
+		aux = aux->next;
+	}
 	aux2 = stack_a;
 	while (aux2)
 	{
 		printf("%d:%d - index:%d\n", aux2->stack_pos, aux2->content, aux2->index);
-		//printf("%d:", aux2->content);
 		aux2 = aux2->next;
 	}
-	aux = stack_b;
 	// Imprimindo pra verificar
-	puts("\n\n\t\tMINHA STACK B");
+	/* puts("\n\n\t\tMINHA STACK B");
 	while (aux)
 	{
 		printf("Elemento: %d\n", aux->content);
 		aux = aux->next;
-	}
+	} */
 	return 0;
 }

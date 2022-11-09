@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 20:51:41 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/08 22:13:36 by vkist-si         ###   ########.fr       */
+/*   Created: 2022/11/08 00:40:38 by vkist-si          #+#    #+#             */
+/*   Updated: 2022/11/08 21:39:27 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-t_element *ft_lstnew(int content, int stack_pos)
+void free_stack(t_element **stack)
 {
-	t_element *new;
-
-	new = (t_element *)malloc(1 * sizeof(t_element));
-	new->content = content;
-	new->stack_pos = stack_pos;
-	new->next = NULL;
-	return (new);
+	t_element	*aux;
+	
+	aux = *stack;
+	while (*stack)
+	{
+		aux = *stack;
+		*stack = (*stack)->next;
+		free(aux);
+	}
+	stack = NULL;
 }

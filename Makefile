@@ -9,8 +9,8 @@ SRCS = $(addprefix $(PATH_SRCS), push_swap.c \
 		ft_get_index.c \
 		choose_sorting.c \
 		sort_for_three.c \
-		find_position.c \
-		sort_one_to_five.c) \
+		sort_one_to_five.c \
+		free_stack.c) \
 		$(addprefix $(PATH_SRCS)moves/,\
 		push.c\
 		rotate.c\
