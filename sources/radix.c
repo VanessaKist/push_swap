@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 00:06:29 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/10 23:26:09 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/12 00:27:05 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,32 @@ static int	get_the_digit(int max_index)
 void radix_sort(t_element **stack_a, t_element **stack_b, int stack_pos)
 {
 	t_element *aux;
-	int digits;
+	int digit;
+	int i;
+	int j;
 	
+	i = 0;
+
 	aux = *stack_a;
 	while (aux)
 	{
 		if (aux->index == (stack_pos - 1))
-			digits = get_the_digit(aux->index);
+			digit = get_the_digit(aux->index);
 		aux = aux->next;
 	}
-
+	while (i < digit)
+	{
+		j = 0;
+		while (j < stack_pos)
+		{
+			if ((*stack_a)->index >> i & 1)
+				do_rotate(stack_a);
+			else
+				do_push(stack_a, stack_b, 'a');
+			j++;
+		}
+	 	while (*stack_b)
+			do_push(stack_a, stack_b, 'b');
+		i++;
+	}
 }

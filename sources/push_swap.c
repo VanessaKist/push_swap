@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 22:57:30 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/10 23:02:45 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/12 00:15:13 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int main (int argc, char **argv)
 	aux2 = stack_a;
 	while (aux2)
 	{
-		printf("%d:%d - index:%d\n", aux2->stack_pos, aux2->content, aux2->index);
+		printf("%d:%d - index:%lld\n", aux2->stack_pos, aux2->content, aux2->index);
 		aux2 = aux2->next;
 	}
 	// Imprimindo pra verificar
