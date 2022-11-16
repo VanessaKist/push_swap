@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 22:57:30 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/12 00:15:13 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/17 00:29:18 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,14 @@ int main (int argc, char **argv)
 			ft_lstnew(ft_atoi(*++argv), stack_pos++));
 	}
 	ft_get_index(stack_a);
-	//free_stack(&stack_a);
 	if(!is_sorted(stack_a))
 		choose_sorting(&stack_a, &stack_b, stack_pos);
-	aux2 = stack_a;
+	free_stack(&stack_a);
+	/* aux2 = stack_a;
 	while (aux2)
 	{
 		printf("%d:%d - index:%lld\n", aux2->stack_pos, aux2->content, aux2->index);
 		aux2 = aux2->next;
-	}
-	// Imprimindo pra verificar
-	/* puts("\n\n\t\tMINHA STACK B");
-	while (aux)
-	{
-		printf("Elemento: %d\n", aux->content);
-		aux = aux->next;
 	} */
 	return 0;
 }

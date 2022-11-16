@@ -9,6 +9,7 @@ SRCS = $(addprefix $(PATH_SRCS), push_swap.c \
 		ft_get_index.c \
 		choose_sorting.c \
 		sort_for_three.c \
+		ft_error.c \
 		sort_one_to_five.c \
 		free_stack.c \
 		radix.c) \

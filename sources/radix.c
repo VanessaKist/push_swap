@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 00:06:29 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/12 00:27:05 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/16 23:58:23 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void radix_sort(t_element **stack_a, t_element **stack_b, int stack_pos)
 		while (j < stack_pos)
 		{
 			if ((*stack_a)->index >> i & 1)
-				do_rotate(stack_a);
+				do_rotate(stack_a, 'a');
 			else
 				do_push(stack_a, stack_b, 'a');
 			j++;
