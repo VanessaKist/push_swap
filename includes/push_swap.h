@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:57:52 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/17 00:24:32 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/17 23:11:46 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_error(void);
 void	do_reverse_rotate(t_element **list, char c);
 void	choose_sorting(t_element **stack_a, t_element **stack_b, int stack_pos);
 void 	sort_for_three(t_element **stack_a);
-void	sort_one_to_five(t_element **stack_a, t_element **stack_b);
+void	sort_one_to_five(t_element **stack_a, t_element **stack_b, int stack_pos);
 void	free_stack(t_element **stack);
 void 	radix_sort(t_element **stack_a, t_element **stack_b, int stack_pos);
 

@@ -6,46 +6,53 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:16:08 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/17 00:13:28 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/18 01:30:54 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_one_to_five(t_element **stack_a, t_element **stack_b)
+static int find_smallest_num_index(t_element **stack_a, int smallest_num)
 {
-	int		to_compare;
-	int 	compared;
+	int i;
 	t_element *aux;
-	t_element *aux2;
 
-	to_compare = 0;
-	aux2 = *stack_a;
 	aux = *stack_a;
-	if ((*stack_a)->stack_pos == 4)
-		compared = 1;
-	else
-		compared = 2;
-	while (to_compare < compared)
+	while (aux)
 	{
-		if(aux->index == to_compare)
-		{
-			while (aux2 != aux)
-			{
-				do_rotate(stack_a, 'a');
-				aux2 = *stack_a;
-			}
-		    *stack_a = aux->next;
-		    do_push(&aux, stack_b, 'a');
-		    to_compare++;
-		}
-		else
-			aux = aux->next;
+		if (aux->index == smallest_num)
+			break ;
+		aux = aux->next;
+		i++;
 	}
-	if((*stack_a)->next->next->next == NULL)
-		sort_for_three(stack_a);
-	else
-		return ;
+	return (i);
+}
+
+void	sort_one_to_five(t_element **stack_a, t_element **stack_b, int stack_pos)
+{
+	int		curr_index;
+	int 	smallest_num;
+	int 	middle;
+	int		total_pos;
+
+	total_pos = stack_pos;
+	smallest_num = 0;
+	while (stack_pos > 3)
+	{
+		curr_index = find_smallest_num_index(stack_a, smallest_num);
+		middle = total_pos / 2;
+		while ((*stack_a)->index != smallest_num)
+		{
+			if(curr_index <= middle)
+				do_rotate(stack_a, 'a');
+			else
+				do_reverse_rotate(stack_a, 'a');
+		}
+		do_push(stack_a, stack_b, 'a');
+		stack_pos--;
+		smallest_num++;
+	}
+	sort_for_three(stack_a);
 	while (*stack_b)
 		do_push(stack_a, stack_b, 'b');
 }

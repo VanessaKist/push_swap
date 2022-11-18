@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 01:26:11 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/04 02:48:07 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/18 01:12:33 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ void	do_push(t_element **stack_a, t_element **stack_b, char c)
 	if (c == 'a')
 	{
 		push(stack_a, stack_b);
-		printf("pa\n");
+		printf("pb\n");
 	}
 	if (c == 'b')
 	{
 		push(stack_b, stack_a);
-		printf("pb\n");
+		printf("pa\n");
 	}
 }
