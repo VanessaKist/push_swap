@@ -6,29 +6,15 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 00:06:29 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/23 02:11:21 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/23 18:46:52 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/* static int	get_the_digit(int max_index)
-{
-	int digits;
-	
-	digits = 0;
-	while (max_index)
-	{
-		max_index /= 2;
-		digits++;
-	}
-	return (digits);
-}
-*/
-// Returns the size of the Linked List
 int	ft_lstsize(t_element *head)
 {
-	size_t	i;
+	size_t		i;
 	t_element	*tmp;
 
 	tmp = head;
@@ -44,8 +30,8 @@ int	ft_lstsize(t_element *head)
 static int	get_max_bits(t_element **stack)
 {
 	t_element	*head;
-	int		max;
-	int		max_bits;
+	int			max;
+	int			max_bits;
 
 	head = *stack;
 	max = head->index;
@@ -61,14 +47,14 @@ static int	get_max_bits(t_element **stack)
 	return (max_bits);
 }
 
-void radix_sort(t_element **stack_a, t_element **stack_b, int stack_pos)
+void	radix_sort(t_element **stack_a, t_element **stack_b)
 {
-	int digit;
-	int i;
-	int j;
-	t_element *head_a;
-	int size;
-	
+	int			digit;
+	int			i;
+	int			j;
+	t_element	*head_a;
+	int			size;
+
 	head_a = *stack_a;
 	size = ft_lstsize(head_a);
 	digit = get_max_bits(stack_a);
@@ -84,7 +70,7 @@ void radix_sort(t_element **stack_a, t_element **stack_b, int stack_pos)
 			else
 				do_push(stack_a, stack_b, 'a');
 		}
-	 	while (ft_lstsize(*stack_b) != 0)
+		while (ft_lstsize(*stack_b) != 0)
 			do_push(stack_a, stack_b, 'b');
 		i++;
 	}

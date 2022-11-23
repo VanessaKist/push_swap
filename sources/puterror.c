@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   puterror.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 20:59:18 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/11/23 18:42:08 by tkomeno          ###   ########.fr       */
+/*   Created: 2022/11/23 17:59:38 by tkomeno           #+#    #+#             */
+/*   Updated: 2022/11/23 18:42:30 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_error(void)
+bool	puterror(void)
 {
-	printf("Error\n");
-	exit(EXIT_FAILURE);
+	ft_putstr_fd("Error\n", STDERR_FILENO);
+	return (false);
 }

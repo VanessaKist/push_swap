@@ -12,6 +12,7 @@ SRCS = $(addprefix $(PATH_SRCS), push_swap.c \
 		ft_error.c \
 		sort_one_to_five.c \
 		free_stack.c \
+		puterror.c \
 		radix.c) \
 		$(addprefix $(PATH_SRCS)moves/,\
 		push.c\
@@ -24,7 +25,7 @@ OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 LIBFT = $(PATH_LIBFT)libft.a
 
 CC = cc
-//CFLAGS = -Wall -Wextra -Werror -ggdb
+CFLAGS = -Wall -Wextra -Werror -ggdb -g
 IFLAGS = -I $(PATH_INCL)
 
 all: $(NAME)

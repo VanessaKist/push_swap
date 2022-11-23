@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 20:54:48 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/17 01:00:23 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/23 18:42:18 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_get_index(t_element *a)
 		{
 			if (i->content < j->content)
 				j->index++;
-		 	else if (i->content == j->content)
+			else if (i->content == j->content)
 			{
 				counter++;
 				if (counter == 2)

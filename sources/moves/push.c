@@ -6,13 +6,11 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 01:26:11 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/18 01:12:33 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/23 18:44:30 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-//pb (push B): Take the first element at the top of A and put it at the top of B. Do nothing if A is empty.
 
 static void	push(t_element **src, t_element **dst)
 {
