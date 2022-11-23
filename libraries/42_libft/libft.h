@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:46:04 by coder             #+#    #+#             */
-/*   Updated: 2022/11/23 01:59:26 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/23 02:11:09 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_list
 
 typedef struct s_element
 {
-	long long					content;
+	int					content;
 	long long			index;
 	int					stack_pos;
 	struct s_element	*next;
