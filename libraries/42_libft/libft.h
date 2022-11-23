@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:46:04 by coder             #+#    #+#             */
-/*   Updated: 2022/11/23 02:11:09 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/23 17:31:44 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
@@ -30,7 +31,7 @@ typedef struct s_element
 	struct s_element	*next;
 }	t_element;
 
-int		ft_atoi(const char *c);
+int		ft_atoi(const char *str, bool *error);
 void	ft_bzero(void *s, size_t len);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);

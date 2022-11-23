@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 22:57:30 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/18 01:18:17 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/11/23 17:48:05 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,36 @@ int main (int argc, char **argv)
 	t_element *stack_b;
 	t_element *aux2;
 	int			stack_pos;
+	bool 		error;
 	
+	error = true;
 	stack_b = NULL;
 	stack_pos = 0;
 	if (argc < 3)
 		exit(1);
 	--argc;
-	stack_a = ft_lstnew(ft_atoi(*++argv), stack_pos++);
+	stack_a = ft_lstnew(ft_atoi(*++argv, &error), stack_pos++);
+	if (error)
+	{
+		ft_putstr_fd("Error\n", STDERR_FILENO);
+		return (1);
+	}
+	error = true;
 	while (--argc)
 	{
 		ft_lstadd_back(&stack_a, 
-			ft_lstnew(ft_atoi(*++argv), stack_pos++));
+			ft_lstnew(ft_atoi(*++argv, &error), stack_pos++));
+		if (error)
+		{
+			ft_putstr_fd("Error\n", STDERR_FILENO);
+			return (1);
+		}
+		error = true;
 	}
 	ft_get_index(stack_a);
 	if(!is_sorted(stack_a))
 		choose_sorting(&stack_a, &stack_b, stack_pos);
+
 	/* aux2 = stack_a;
 	while (aux2)
 	{
