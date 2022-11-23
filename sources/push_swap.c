@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 22:57:30 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/11/23 18:44:08 by tkomeno          ###   ########.fr       */
+/*   Updated: 2022/11/23 18:50:53 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int	main(int argc, char **argv)
 		free_stack(&stack_a);
 		return (1);
 	}
-	printf("stack_pos %d\n", stack_pos);
 	ft_get_index(stack_a);
 	if (!is_sorted(stack_a))
 		choose_sorting(&stack_a, &stack_b, stack_pos);
